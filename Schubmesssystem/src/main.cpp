@@ -112,15 +112,15 @@ void loop(void)
 
 		data.relclk = time;  		
 		data.temp1K = DS18B20.getTempCByIndex(0) + 273.15;
-        data.temp2K = DS18B20.getTempCByIndex(sensorCount-1) + 273.15; //Anzahl DS18B20 - 1
+        	data.temp2K = DS18B20.getTempCByIndex(sensorCount-1) + 273.15; //Anzahl DS18B20 - 1
 		data.force1 = f1;
-	    data.force2 = f2;
-	    data.raw1 = scale1.read();
-	    data.raw2 = scale2.read();
+		data.force2 = f2;
+	 	data.raw1 = scale1.read();
+		data.raw2 = scale2.read();
 
 	//Serial Comunication -> Struct is send 
 	Serial.print("*b");
-    Serial.write((byte*)&data, sizeof(data));
-    Serial.print("e/");
+        Serial.write((byte*)&data, sizeof(data));
+        Serial.print("e/");
 
 }
